@@ -20,10 +20,10 @@ class CatTile extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 8),
-            // Text(
-            //   '${category.id}',
-            //   style: TextStyle(fontSize: 20),
-            // ),
+            Text(
+              '${category.id}',
+              style: TextStyle(fontSize: 20),
+            ),
           ],
         ),
       ),
