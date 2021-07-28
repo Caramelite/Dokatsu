@@ -4,16 +4,23 @@ import 'package:katsuu/services/cats_services.dart';
 
 class CatController extends GetxController {
   var isLoading = true.obs;
-  var cetegoryList = <Category>[].obs;
+  var categoryList = <Category>[].obs;
+  var breedList = <Breed>[].obs;
   @override
   void onInit() {
     fetchCategory();
+    fetchBreed();
     super.onInit();
   }
 
   void fetchCategory() async {
-    cetegoryList.value = await CatsServices.fetchCategory();
+    categoryList.value = await CatsServices.fetchCategory();
     isLoading.value = false;
-    print(cetegoryList);
+  }
+
+  void fetchBreed() async {
+    breedList.value = await CatsServices.fetchBreed();
+    isLoading.value = false;
+    print(breedList);
   }
 }
