@@ -1,7 +1,7 @@
+import 'package:dokatsu/models/Cats/Breed.dart';
 import 'package:flutter/material.dart';
-import 'package:katsuu/models/Cats/Breed.dart';
 
-import '../breed_detail.dart';
+import '../../breed_detail.dart';
 
 class BreedTile extends StatelessWidget {
   final Breed breed;

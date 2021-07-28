@@ -1,6 +1,7 @@
+import 'package:dokatsu/models/design.dart';
 import 'package:flutter/material.dart';
-import 'package:katsuu/models/design.dart';
-import 'package:katsuu/views/menu_drawer.dart';
+
+import 'menu_drawer.dart';
 
 class Details extends StatelessWidget {
   @override

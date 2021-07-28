@@ -1,7 +1,7 @@
+import 'package:dokatsu/constants/controllers.dart';
+import 'package:dokatsu/models/design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:katsuu/constants/controller_constants.dart';
-import 'package:katsuu/models/design.dart';
 
 import 'detail_screen.dart';
 import 'menu_drawer.dart';

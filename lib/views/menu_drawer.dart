@@ -1,7 +1,9 @@
+import 'package:dokatsu/constants/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:katsuu/constants/controller_constants.dart';
-import 'package:katsuu/views/detail_screen.dart';
+
+import 'Cats/CatBreed/breed_screen.dart';
+import 'detail_screen.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
