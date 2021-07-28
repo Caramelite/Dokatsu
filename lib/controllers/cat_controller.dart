@@ -1,7 +1,7 @@
+import 'package:dokatsu/models/Cats/Breed.dart';
+import 'package:dokatsu/models/Cats/Category.dart';
+import 'package:dokatsu/services/cat_services.dart';
 import 'package:get/get.dart';
-import 'package:katsuu/models/Cats/Breed.dart';
-import 'package:katsuu/models/Cats/Category.dart';
-import 'package:katsuu/services/cat_services.dart';
 
 class CatController extends GetxController {
   static CatController instance = Get.find();
@@ -16,13 +16,12 @@ class CatController extends GetxController {
   }
 
   void fetchCategory() async {
-    categoryList.value = await CatsServices.fetchCategories();
+    categoryList.value = await CatServices.fetchCategories();
     isLoading.value = false;
   }
 
   void fetchBreed() async {
-    breedList.value = await CatsServices.fetchBreeds();
+    breedList.value = await CatServices.fetchBreeds();
     isLoading.value = false;
-    print(breedList);
   }
 }

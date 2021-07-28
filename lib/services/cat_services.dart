@@ -1,8 +1,8 @@
+import 'package:dokatsu/models/Cats/Breed.dart';
+import 'package:dokatsu/models/Cats/Category.dart';
 import 'package:http/http.dart' as http;
-import 'package:katsuu/models/Cats/Breed.dart';
-import 'package:katsuu/models/Cats/Category.dart';
 
-class CatsServices {
+class CatServices {
   static var client = http.Client();
 
   static Future<List<Breed>> fetchBreeds() async {
@@ -11,6 +11,8 @@ class CatsServices {
     if (response.statusCode == 200) {
       var jsonString = response.body;
       List<Breed> breed = breedFromJson(jsonString);
+      print("Cat Serivce");
+      print(jsonString);
       return breed;
       // return breedFromJson(jsonString);
     } else

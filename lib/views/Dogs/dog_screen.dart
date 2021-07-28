@@ -1,13 +1,11 @@
+import 'package:dokatsu/constants/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:katsuu/controllers/dog_controller.dart';
 
 import 'dog_tile.dart';
 
-class DetailScreen extends StatelessWidget {
-  final DogController dogController = Get.put(DogController());
-
+class DogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,20 +30,15 @@ class DetailScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Obx(() {
-              if (dogController.isLoading.value)
-                return Center(child: CircularProgressIndicator());
-              else
-                return StaggeredGridView.countBuilder(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    itemCount: dogController.dogList.length,
-                    itemBuilder: (context, index) {
-                      return DogTile(dogController.dogList[index]);
-                    },
-                    staggeredTileBuilder: (index) => StaggeredTile.fit(1));
-            }),
+            child: Obx(() => StaggeredGridView.countBuilder(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                itemCount: dogController.dogList.length,
+                itemBuilder: (context, index) {
+                  return DogTile(dogController.dogList[index]);
+                },
+                staggeredTileBuilder: (index) => StaggeredTile.fit(1))),
           ),
         ],
       ),

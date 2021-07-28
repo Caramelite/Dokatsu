@@ -1,22 +1,22 @@
+import 'package:dokatsu/models/Dogs/Breed.dart';
+import 'package:dokatsu/services/dog_services.dart';
 import 'package:get/get.dart';
-import 'package:katsuu/models/dog.dart';
-import 'package:katsuu/services/dog_services.dart';
 
 class DogController extends GetxController {
   static DogController instance = Get.find();
-  var dogList = <Dog>[].obs;
+  var dogList = <Breed>[].obs;
   var isLoading = true.obs;
 
   @override
   void onInit() {
-    fetchData();
+    fetchBreeds();
     super.onInit();
   }
 
-  void fetchData() async {
+  void fetchBreeds() async {
     try {
       isLoading(true);
-      dogList.value = await DogHelper.fetchData();
+      dogList.value = await DogServices.fetchBreeds();
     } finally {
       isLoading(false);
     }

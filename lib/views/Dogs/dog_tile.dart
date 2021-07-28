@@ -1,8 +1,8 @@
+import 'package:dokatsu/models/Dogs/Breed.dart';
 import 'package:flutter/material.dart';
-import 'package:katsuu/models/dog.dart';
 
 class DogTile extends StatelessWidget {
-  final Dog dog;
+  final Breed dog;
   const DogTile(this.dog);
   @override
   Widget build(BuildContext context) {

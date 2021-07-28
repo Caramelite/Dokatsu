@@ -1,15 +1,16 @@
+import 'package:dokatsu/models/Dogs/Breed.dart';
 import 'package:http/http.dart' as http;
-import 'package:katsuu/models/dog.dart';
-
-class DogHelper {
+class DogServices {
   static var client = http.Client();
 
-  static Future<List<Dog>> fetchData() async {
+  static Future<List<Breed>> fetchBreeds() async {
     var response =
         await client.get(Uri.parse("https://api.thedogapi.com/v1/breeds"));
     if (response.statusCode == 200) {
       var jsonString = response.body;
-      return dogFromJson(jsonString);
+      print("Dog Serivce");
+      print(jsonString);
+      return breedFromJson(jsonString);
     } else
       return [];
   }

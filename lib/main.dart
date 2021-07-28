@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import './views/homescreen.dart';
+import 'controllers/drawer_controller.dart';
 import 'controllers/cat_controller.dart';
 import 'controllers/dog_controller.dart';
 
 void main() {
+  Get.put(DrawController());
   Get.put(CatController());
   Get.put(DogController());
   runApp(MyApp());
