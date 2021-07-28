@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:katsuu/model/design.dart';
+import 'package:katsuu/models/design.dart';
 
 class Details extends StatelessWidget {
   @override

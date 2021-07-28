@@ -1,23 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:katsuu/model/design.dart';
+import 'package:katsuu/models/design.dart';
 
 import 'detail_screen.dart';
 import 'menu_drawer.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
-        centerTitle: true,
-        title: Text('KATSUU'),
+        // centerTitle: true,
+        title: Text('Dokatsu'),
       ),
       body: SingleChildScrollView(
         child: Column(

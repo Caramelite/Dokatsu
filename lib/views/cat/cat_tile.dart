@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:katsuu/model/cat.dart';
+import 'package:katsuu/models/cat.dart';
 
 class CatTile extends StatelessWidget {
   final Category category;
