@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:katsuu/constants/controller_constants.dart';
 import 'package:katsuu/models/design.dart';
 
 import 'detail_screen.dart';
@@ -9,11 +10,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: drawerController.scaffoldKey,
       drawer: NavDrawer(),
-      appBar: AppBar(
-        // centerTitle: true,
-        title: Text('Dokatsu'),
-      ),
+      appBar: AppBar(title: Text('Dokatsu')),
       body: SingleChildScrollView(
         child: Column(
           children: [

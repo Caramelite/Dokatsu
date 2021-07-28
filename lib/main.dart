@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Dokatsu',
-        theme: ThemeData(
-          primaryColor: Colors.blue[600],
-          accentColor: Colors.amber,
-        ),
-        home: HomeScreen());
+      debugShowCheckedModeBanner: false,
+      title: 'Dokatsu',
+      theme: ThemeData(
+        primaryColor: Colors.blue[600],
+        accentColor: Colors.amber,
+      ),
+      home: SafeArea(child: HomeScreen())
+    );
   }
 }
