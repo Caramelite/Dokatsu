@@ -30,17 +30,14 @@ class Category {
 List<Breed> breedFromJson(String str) =>
     List<Breed>.from(json.decode(str).map((x) => Breed.fromJson(x)));
 
-String breedToJson(List<Breed> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 class Breed {
-  int id;
+  String id;
   String name;
   String temperament;
   String origin;
   String description;
   String lifeSpan;
-  String imageLink;
+  String image;
   Breed({
     required this.id,
     required this.name,
@@ -48,7 +45,7 @@ class Breed {
     required this.origin,
     required this.description,
     required this.lifeSpan,
-    required this.imageLink,
+    required this.image,
   });
 
   var isFavorite = false.obs;
@@ -60,16 +57,6 @@ class Breed {
         origin: json["origin"],
         description: json["description"],
         lifeSpan: json["life_span"],
-        imageLink: json["image_link"],
+        image: json["image"]["url"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "temperament": temperament,
-        "origin": origin,
-        "description": description,
-        "life_span": lifeSpan,
-        "image_link": imageLink,
-      };
 }

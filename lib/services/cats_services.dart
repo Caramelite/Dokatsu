@@ -23,8 +23,8 @@ class CatsServices {
       var jsonString = response.body;
       List<Breed> breed = breedFromJson(jsonString);
       return breed;
-    } else {
+      // return breedFromJson(jsonString);
+    } else
       return [];
-    }
   }
 }
