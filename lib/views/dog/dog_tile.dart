@@ -1,10 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'models/dog.dart';
-
-const String KApikey = 'da7921ee-f0fe-4de0-9adf-13aa224119b3';
-const String kApiUrl = 'https://api.thedogapi.com/v1';
+import 'package:katsuu/models/dog.dart';
 
 class DogTile extends StatelessWidget {
   final Dog dog;

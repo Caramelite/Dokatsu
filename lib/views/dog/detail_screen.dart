@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:katsuu/constant.dart';
 import 'package:katsuu/controllers/dog_controller.dart';
+
+import 'dog_tile.dart';
 
 class DetailScreen extends StatelessWidget {
   final DogController dogController = Get.put(DogController());
