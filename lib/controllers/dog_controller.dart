@@ -1,6 +1,6 @@
 import 'package:get/state_manager.dart';
-import 'package:katsuu/Model/dog.dart';
-import 'package:katsuu/services/dog_service.dart';
+import 'package:katsuu/models/dog.dart';
+import 'package:katsuu/services/dog_services.dart';
 
 class DogController extends GetxController {
   var dogList = <Dog>[].obs;

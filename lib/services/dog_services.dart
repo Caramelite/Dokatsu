@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:katsuu/Model/dog.dart';
+import 'package:katsuu/models/dog.dart';
 
 class DogHelper {
   static var client = http.Client();

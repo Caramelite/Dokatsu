@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:katsuu/models/cat.dart';
-import 'package:katsuu/services/cats_services.dart';
+import 'package:katsuu/services/cat_services.dart';
 
 class CatController extends GetxController {
   var isLoading = true.obs;
