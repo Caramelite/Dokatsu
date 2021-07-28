@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:katsuu/models/cat.dart';
+import 'package:katsuu/models/Cats/Breed.dart';
 
 import '../breed_detail.dart';
 

@@ -1,31 +1,4 @@
 import 'dart:convert';
-import 'package:get/get.dart';
-
-List<Category> categoryFromJson(String str) =>
-    List<Category>.from(json.decode(str).map((x) => Category.fromJson(x)));
-
-String categoryToJson(List<Category> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-class Category {
-  Category({
-    required this.id,
-    required this.name,
-  });
-
-  int id;
-  String name;
-
-  factory Category.fromJson(Map<String, dynamic> json) => Category(
-        id: json["id"],
-        name: json["name"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-      };
-}
 
 List<Breed> breedFromJson(String str) =>
     List<Breed>.from(json.decode(str).map((x) => Breed.fromJson(x)));
@@ -47,8 +20,6 @@ class Breed {
     required this.lifeSpan,
     required this.image,
   });
-
-  var isFavorite = false.obs;
 
   factory Breed.fromJson(Map<String, dynamic> json) => Breed(
         id: json["id"],
