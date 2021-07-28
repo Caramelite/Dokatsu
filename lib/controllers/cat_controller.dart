@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:katsuu/model/cat.dart';
+import 'package:katsuu/models/cat.dart';
 import 'package:katsuu/services/cats_services.dart';
 
 class CatController extends GetxController {
