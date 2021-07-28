@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:katsuu/model/cat.dart';
+import 'package:katsuu/models/Cats/Breed.dart';
 
 class BreedDetail extends StatelessWidget {
   final Breed breed;

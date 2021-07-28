@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
-import 'package:katsuu/model/cat.dart';
-import 'package:katsuu/services/cats_services.dart';
+import 'package:katsuu/models/Cats/Breed.dart';
+import 'package:katsuu/models/Cats/Category.dart';
+import 'package:katsuu/services/cat_services.dart';
 
 class CatController extends GetxController {
+  static CatController instance = Get.find();
   var isLoading = true.obs;
   var categoryList = <Category>[].obs;
   var breedList = <Breed>[].obs;
@@ -14,12 +16,12 @@ class CatController extends GetxController {
   }
 
   void fetchCategory() async {
-    categoryList.value = await CatsServices.fetchCategory();
+    categoryList.value = await CatsServices.fetchCategories();
     isLoading.value = false;
   }
 
   void fetchBreed() async {
-    breedList.value = await CatsServices.fetchBreed();
+    breedList.value = await CatsServices.fetchBreeds();
     isLoading.value = false;
     print(breedList);
   }
