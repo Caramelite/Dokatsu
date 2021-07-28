@@ -33,7 +33,7 @@ dev_dependencies:
   flutter_native_splash: ^1.2.0
 
 flutter_native_splash:
-  color: '#ffffff'
+  color: '#EBF1FF'
   image: assets\images\Dokatsu.png
   android: true
   ios: true

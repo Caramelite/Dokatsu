@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'CatBreed/breed_screen.dart';
-import 'CatCategory/category_screen.dart';
+import 'package:get/get.dart';
+import 'package:katsuu/constants/controller_constants.dart';
+import 'package:katsuu/views/detail_screen.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -12,11 +13,10 @@ class NavDrawer extends StatelessWidget {
           DrawerHeader(
             child: Text(''),
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: Color(0xFFEBF1FF),
               image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Hah3gmPWOBgyjne-W6PGgW0c5FFzpKZP4QXs9c2aBIYdYzuhfEvwz_EUfLgE0DZjGTAJR-0upI8aTA&usqp=CAU'),
+                fit: BoxFit.contain,
+                image: AssetImage('assets/images/Dokatsu.png'),
               ),
             ),
           ),
@@ -34,10 +34,8 @@ class NavDrawer extends StatelessWidget {
             leading: Icon(Icons.category_rounded),
             title: Text('Category'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CategoryScreen()),
-              );
+              Get.to(Details());
+              drawerController.closeDrawer();
             },
           ),
           ListTile(

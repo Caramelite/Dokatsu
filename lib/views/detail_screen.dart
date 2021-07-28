@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:katsuu/models/design.dart';
+import 'package:katsuu/views/menu_drawer.dart';
 
 class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(),
       body: Stack(
         children: [
           Positioned.fill(
