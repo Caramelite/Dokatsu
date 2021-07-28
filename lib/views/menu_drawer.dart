@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'CatBreed/breed_screen.dart';
+import 'CatCategory/category_screen.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -21,12 +23,22 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.pets),
             title: Text('Breed'),
-            onTap: () => {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreedScreen()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.category_rounded),
             title: Text('Category'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CategoryScreen()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.how_to_vote),

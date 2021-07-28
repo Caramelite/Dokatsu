@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:katsuu/models/cat.dart';
+import 'package:katsuu/model/cat.dart';
 
 class CatsServices {
   static var client = http.Client();
