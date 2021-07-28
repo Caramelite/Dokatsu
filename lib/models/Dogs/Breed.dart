@@ -26,6 +26,6 @@ class Breed {
         //   lifeSpan: json["life_span"],
         //   temperament: json["temperament"],
         // /origin: json["origin"],
-        image: json["image"]["url"],
+        image: json["image"]?["url"] ?? "",
       );
 }

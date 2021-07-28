@@ -21,13 +21,15 @@ class Breed {
     required this.image,
   });
 
-  factory Breed.fromJson(Map<String, dynamic> json) => Breed(
+  factory Breed.fromJson(Map<String, dynamic> json) {
+    return Breed(
         id: json["id"],
         name: json["name"],
         temperament: json["temperament"],
         origin: json["origin"],
         description: json["description"],
         lifeSpan: json["life_span"],
-        image: json["image"]["url"],
+        image: json["image"]?["url"] ?? "",
       );
+  }
 }
