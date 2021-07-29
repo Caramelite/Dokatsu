@@ -5,11 +5,13 @@ import 'package:get/get.dart';
 class DogController extends GetxController {
   static DogController instance = Get.find();
   var breedList = <DogBreed>[].obs;
+  var factList = <String>[].obs;
   var isLoading = true.obs;
 
   @override
   void onInit() {
     fetchBreeds();
+    fetchFacts();
     super.onInit();
   }
 
@@ -18,8 +20,14 @@ class DogController extends GetxController {
     breedList.forEach((breed) async {
       var imageUrls = await DogServices.fetchImagesByBreed(breed.id);
       breed.image.addAll(imageUrls);
-      breed.image = [...{...breed.image}];
+      breed.image = [
+        ...{...breed.image}
+      ];
     });
     isLoading(false);
+  }
+
+  void fetchFacts() async {
+    factList.value = await DogServices.fetchFacts();
   }
 }

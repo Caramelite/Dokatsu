@@ -1,5 +1,6 @@
 import 'package:dokatsu/constants/controllers.dart';
 import 'package:dokatsu/constants/enums.dart';
+import 'package:dokatsu/views/Dogs/dog_fact_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,21 +70,16 @@ class NavDrawer extends StatelessWidget {
               drawerController.closeDrawer();
             },
           ),
-          // ListTile(
-          //   leading: Icon(Icons.category_rounded),
-          //   title: Text('Category'),
-          //   onTap: () {
-          //     drawerController.activeScaffoldBody.value =
-          //         drawerController.pet.value == PetSelected.dog
-          //             ? DogBreedScreen()
-          //             : CatCategoryScreen();
-          //     drawerController.closeDrawer();
-          //   },
-          // ),
           ListTile(
-            leading: Icon(Icons.image),
-            title: Text('Images'),
-            onTap: () => {Navigator.of(context).pop()},
+            leading: Icon(Icons.fact_check_outlined),
+            title: Text('Facts'),
+            onTap: () {
+              drawerController.activeScaffoldBody.value =
+                  drawerController.pet.value == PetSelected.dog
+                      ? DogFactScreen()
+                      : CatBreedScreen();
+              drawerController.closeDrawer();
+            },
           ),
         ],
       ),

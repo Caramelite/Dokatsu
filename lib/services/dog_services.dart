@@ -26,10 +26,23 @@ class DogServices {
         headers: {HttpHeaders.authorizationHeader: dogs_api_key});
     if (response.statusCode == 200) {
       var jsonString = response.body;
-      List<String> imageUrls = List<String>.from(json.decode(jsonString).map((x) => x['url']).toList());
+      List<String> imageUrls = List<String>.from(
+          json.decode(jsonString).map((x) => x['url']).toList());
       return imageUrls;
     } else
       return [];
   }
 
+  static Future<List<String>> fetchFacts() async {
+    var response = await client.get(
+        Uri.parse('https://dog-api.kinduff.com/api/facts?number=100'),
+        headers: {HttpHeaders.authorizationHeader: dogs_api_key});
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      List<String> dogFacts =
+          List<String>.from(json.decode(jsonString)['facts']);
+      return dogFacts;
+    } else
+      return [];
+  }
 }
