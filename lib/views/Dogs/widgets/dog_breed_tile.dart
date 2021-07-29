@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dokatsu/models/Dogs/DogBreed.dart';
+import 'package:dokatsu/models/DogBreed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

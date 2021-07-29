@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dokatsu/constants/api_constants.dart';
-import 'package:dokatsu/models/Dogs/DogBreed.dart';
+import 'package:dokatsu/models/DogBreed.dart';
 import 'package:http/http.dart' as http;
 
 class DogServices {

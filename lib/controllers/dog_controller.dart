@@ -1,4 +1,4 @@
-import 'package:dokatsu/models/Dogs/DogBreed.dart';
+import 'package:dokatsu/models/DogBreed.dart';
 import 'package:dokatsu/services/dog_services.dart';
 import 'package:get/get.dart';
 
