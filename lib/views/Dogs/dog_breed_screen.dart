@@ -4,7 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'dog_tile.dart';
+import 'widgets/dog_breed_tile.dart';
 
 class DogBreedScreen extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class DogBreedScreen extends StatelessWidget {
                   crossAxisSpacing: 10,
                   itemCount: dogController.breedList.length,
                   itemBuilder: (context, index) {
-                    return DogTile(dogController.breedList[index]);
+                    return DogBreedTile(dogController.breedList[index]);
                   },
                   staggeredTileBuilder: (index) => StaggeredTile.fit(1))),
         ),
