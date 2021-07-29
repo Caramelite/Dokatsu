@@ -19,17 +19,19 @@ class DogBreedScreen extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Obx(() => dogController.isLoading.value
-              ? Center(child: CircularProgressIndicator())
-              : StaggeredGridView.countBuilder(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  itemCount: dogController.breedList.length,
-                  itemBuilder: (context, index) {
-                    return DogBreedTile(dogController.breedList[index]);
-                  },
-                  staggeredTileBuilder: (index) => StaggeredTile.fit(1))),
+          child: Obx(
+            () => dogController.isLoading.value
+                ? Center(child: CircularProgressIndicator())
+                : StaggeredGridView.countBuilder(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    itemCount: dogController.breedList.length,
+                    itemBuilder: (context, index) {
+                      return DogBreedTile(dogController.breedList[index]);
+                    },
+                    staggeredTileBuilder: (index) => StaggeredTile.fit(1)),
+          ),
         ),
       ],
     );
