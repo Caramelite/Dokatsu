@@ -1,13 +1,13 @@
-import 'package:dokatsu/models/Cats/Breed.dart';
-import 'package:dokatsu/models/Cats/Category.dart';
+import 'package:dokatsu/models/Cats/CatBreed.dart';
+import 'package:dokatsu/models/Cats/CatCategory.dart';
 import 'package:dokatsu/services/cat_services.dart';
 import 'package:get/get.dart';
 
 class CatController extends GetxController {
   static CatController instance = Get.find();
   var isLoading = true.obs;
-  var categoryList = <Category>[].obs;
-  var breedList = <Breed>[].obs;
+  var categoryList = <CatCategory>[].obs;
+  var breedList = <CatBreed>[].obs;
   @override
   void onInit() {
     fetchCategory();

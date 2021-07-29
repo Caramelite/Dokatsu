@@ -2,7 +2,7 @@ import 'package:dokatsu/constants/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'widgets/category_tile.dart';
+import 'widgets/cat_category_tile.dart';
 
 class CategoryScreen extends StatelessWidget {
   @override
@@ -20,7 +20,7 @@ class CategoryScreen extends StatelessWidget {
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                     itemBuilder: (context, index) {
-                      return CatTile(catController.categoryList[index]);
+                      return CatCategoryTile(catController.categoryList[index]);
                     },
                     staggeredTileBuilder: (index) => StaggeredTile.fit(1),
                   )

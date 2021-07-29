@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dokatsu/models/Cats/CatBreed.dart';
+import 'package:dokatsu/models/Dogs/DogBreed.dart';
 import 'package:flutter/material.dart';
 
-class CatBreedDetail extends StatelessWidget {
-  final CatBreed breed;
+class DogBreedDetail extends StatelessWidget {
+  final DogBreed breed;
 
-  const CatBreedDetail(this.breed);
+  const DogBreedDetail(this.breed);
 
   @override
   Widget build(BuildContext context) {
@@ -57,34 +57,34 @@ class CatBreedDetail extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
+                "Bred For: ",
+                style: TextStyle(fontSize: 15),
+              ),
+              Text(
+                breed.bredFor,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Breed Group: ",
+                style: TextStyle(fontSize: 15),
+              ),
+              Text(
+                breed.breedGroup,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Text(
                 "Temperament: ",
                 style: TextStyle(fontSize: 15),
               ),
               Text(
                 breed.temperament,
                 maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "Origin: ",
-                style: TextStyle(fontSize: 15),
-              ),
-              Text(
-                breed.origin,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "Description: ",
-                style: TextStyle(fontSize: 15),
-              ),
-              Text(
-                breed.description,
-                maxLines: 15,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),

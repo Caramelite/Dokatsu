@@ -1,9 +1,9 @@
-import 'package:dokatsu/models/Cats/Category.dart';
+import 'package:dokatsu/models/Cats/CatCategory.dart';
 import 'package:flutter/material.dart';
 
-class CatTile extends StatelessWidget {
-  final Category category;
-  const CatTile(this.category);
+class CatCategoryTile extends StatelessWidget {
+  final CatCategory category;
+  const CatCategoryTile(this.category);
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,11 +18,6 @@ class CatTile extends StatelessWidget {
               maxLines: 2,
               style: TextStyle(fontWeight: FontWeight.w800),
               overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(height: 8),
-            Text(
-              '${category.id}',
-              style: TextStyle(fontSize: 20),
             ),
           ],
         ),

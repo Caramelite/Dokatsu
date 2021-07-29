@@ -1,20 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dokatsu/models/Cats/CatBreed.dart';
+import 'package:dokatsu/models/Dogs/DogBreed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'cat_breed_detail.dart';
+import 'dog_breed_detail.dart';
 
-class CatBreedTile extends StatelessWidget {
-  final CatBreed breed;
+class DogBreedTile extends StatelessWidget {
+  final DogBreed breed;
 
-  const CatBreedTile(this.breed);
+  const DogBreedTile(this.breed);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(CatBreedDetail(breed));
+        Get.to(DogBreedDetail(breed));
       },
       child: Card(
         elevation: 2,
@@ -38,8 +38,9 @@ class CatBreedTile extends StatelessWidget {
                               Center(child: CircularProgressIndicator()),
                           errorWidget: (context, url, error) =>
                               Icon(Icons.error),
-                          fit: BoxFit.cover,
-                        )),
+                              fit: BoxFit.cover,
+                        )
+                  ),
               SizedBox(height: 8),
               Text(
                 breed.name,
