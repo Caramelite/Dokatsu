@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Cats/cat_breed_screen.dart';
-import 'Cats/cat_category_screen.dart';
 import 'Dogs/dog_breed_screen.dart';
 
 class NavDrawer extends StatelessWidget {
