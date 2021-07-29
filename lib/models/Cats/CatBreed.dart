@@ -22,7 +22,7 @@ class CatBreed {
   });
 
   factory CatBreed.fromJson(Map<String, dynamic> json) {
-    var img = json["image"]?['url'] ?? '';
+    var img = json["image"]?['url'] ?? "";
     return CatBreed(
         id: json["id"] ?? "",
         name: json["name"] ?? "",

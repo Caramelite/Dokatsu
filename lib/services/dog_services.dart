@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dokatsu/constants/api_constants.dart';
@@ -17,4 +18,18 @@ class DogServices {
     } else
       return [];
   }
+
+  static Future<List<String>> fetchImagesByBreed(int id) async {
+    var response = await client.get(
+        Uri.parse(
+            'https://api.thedogapi.com/v1/images/search?limit=100&breed_id=$id'),
+        headers: {HttpHeaders.authorizationHeader: dogs_api_key});
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      List<String> imageUrls = List<String>.from(json.decode(jsonString).map((x) => x['url']).toList());
+      return imageUrls;
+    } else
+      return [];
+  }
+
 }

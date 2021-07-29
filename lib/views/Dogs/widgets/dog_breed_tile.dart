@@ -30,17 +30,20 @@ class DogBreedTile extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: breed.image == ''
-                      ? Image.asset('assets/images/Dokatsu Logo.png', fit: BoxFit.cover)
+                  child: breed.image.firstWhere((url) => url.isNotEmpty,
+                              orElse: () => '') ==
+                          ''
+                      ? Image.asset('assets/images/Dokatsu Logo.png',
+                          fit: BoxFit.cover)
                       : CachedNetworkImage(
-                          imageUrl: breed.image,
+                          imageUrl:
+                              breed.image.firstWhere((url) => url.isNotEmpty),
                           placeholder: (context, url) =>
                               Center(child: CircularProgressIndicator()),
                           errorWidget: (context, url, error) =>
                               Icon(Icons.error),
-                              fit: BoxFit.cover,
-                        )
-                  ),
+                          fit: BoxFit.cover,
+                        )),
               SizedBox(height: 8),
               Text(
                 breed.name,

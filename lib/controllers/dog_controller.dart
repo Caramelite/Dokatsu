@@ -14,11 +14,12 @@ class DogController extends GetxController {
   }
 
   void fetchBreeds() async {
-    try {
-      isLoading(true);
-      breedList.value = await DogServices.fetchBreeds();
-    } finally {
-      isLoading(false);
-    }
+    breedList.value = await DogServices.fetchBreeds();
+    breedList.forEach((breed) async {
+      var imageUrls = await DogServices.fetchImagesByBreed(breed.id);
+      breed.image.addAll(imageUrls);
+      breed.image = [...{...breed.image}];
+    });
+    isLoading(false);
   }
 }

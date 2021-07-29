@@ -20,15 +20,18 @@ class DogBreed {
   String bredFor;
   String breedGroup;
   String temperament;
-  String image;
+  List<String> image;
 
-  factory DogBreed.fromJson(Map<String, dynamic> json) => DogBreed(
-        id: json["id"] ?? "",
-        name: json["name"] ?? "",
-        lifeSpan: json["life_span"] ?? "",
-        bredFor: json["bred_for"] ?? "",
-        breedGroup: json["breed_group"] ?? "",
-        temperament: json["temperament"] ?? "",
-        image: json["image"]?["url"] ?? "",
-      );
+  factory DogBreed.fromJson(Map<String, dynamic> json) {
+    var img = json["image"]?['url'] ?? "";
+    return DogBreed(
+      id: json["id"] ?? "",
+      name: json["name"] ?? "",
+      lifeSpan: json["life_span"] ?? "",
+      bredFor: json["bred_for"] ?? "",
+      breedGroup: json["breed_group"] ?? "",
+      temperament: json["temperament"] ?? "",
+      image: [img],
+    );
+  }
 }

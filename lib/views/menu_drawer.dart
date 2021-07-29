@@ -81,16 +81,6 @@ class NavDrawer extends StatelessWidget {
           //     drawerController.closeDrawer();
           //   },
           // ),
-          // ListTile(
-          //   leading: Icon(Icons.how_to_vote),
-          //   title: Text('Votes'),
-          //   onTap: () => {Navigator.of(context).pop()},
-          // ),
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
           ListTile(
             leading: Icon(Icons.image),
             title: Text('Images'),

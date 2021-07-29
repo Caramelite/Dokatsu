@@ -25,7 +25,7 @@ class CatController extends GetxController {
     breedList.value = await CatServices.fetchBreeds();
     breedList.forEach((breed) async {
       breed.image.addAll(await CatServices.fetchImagesByBreed(breed.id));
-      breed.image = breed.image.toSet().toList();
+      breed.image = [...{...breed.image}];
     });
     isLoading.value = false;
   }
