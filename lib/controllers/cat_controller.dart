@@ -1,4 +1,4 @@
-import 'package:dokatsu/models/Cats/CatBreed.dart';
+import 'package:dokatsu/models/CatBreed.dart';
 import 'package:dokatsu/services/cat_services.dart';
 import 'package:get/get.dart';
 
@@ -6,10 +6,11 @@ class CatController extends GetxController {
   static CatController instance = Get.find();
   var isLoading = true.obs;
   var breedList = <CatBreed>[].obs;
+  var factList = <String>[].obs;
   @override
   void onInit() {
     fetchBreed();
-    fetchImages();
+    fetchFacts();
     super.onInit();
   }
 
@@ -23,7 +24,7 @@ class CatController extends GetxController {
     isLoading.value = false;
   }
 
-  void fetchImages() async {
-    await CatServices.fetchImagesByBreed('abys');
+  void fetchFacts() async {
+    factList.value = await CatServices.fetchFacts();
   }
 }

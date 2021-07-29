@@ -1,11 +1,11 @@
 import 'package:dokatsu/constants/controllers.dart';
 import 'package:dokatsu/constants/enums.dart';
-import 'package:dokatsu/views/Dogs/dog_fact_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Cats/cat_breed_screen.dart';
+import 'fact_screen.dart';
 import 'Dogs/dog_breed_screen.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -74,10 +74,7 @@ class NavDrawer extends StatelessWidget {
             leading: Icon(Icons.fact_check_outlined),
             title: Text('Facts'),
             onTap: () {
-              drawerController.activeScaffoldBody.value =
-                  drawerController.pet.value == PetSelected.dog
-                      ? DogFactScreen()
-                      : CatBreedScreen();
+              drawerController.activeScaffoldBody.value = FactScreen();
               drawerController.closeDrawer();
             },
           ),

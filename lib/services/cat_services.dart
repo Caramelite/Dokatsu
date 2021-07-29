@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dokatsu/constants/api_constants.dart';
-import 'package:dokatsu/models/Cats/CatBreed.dart';
+import 'package:dokatsu/models/CatBreed.dart';
 import 'package:http/http.dart' as http;
 
 class CatServices {
@@ -29,6 +29,19 @@ class CatServices {
       List<String> imageUrls = List<String>.from(
           json.decode(jsonString).map((x) => x['url']).toList());
       return imageUrls;
+    } else
+      return [];
+  }
+
+  static Future<List<String>> fetchFacts() async {
+    var response = await client.get(
+        Uri.parse('https://catfact.ninja/facts?limit=100'),
+        headers: {HttpHeaders.authorizationHeader: cats_api_key});
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      List<String> catFacts = List<String>.from(
+          json.decode(jsonString)['data'].map((x) => x['fact']).toList());
+      return catFacts;
     } else
       return [];
   }
