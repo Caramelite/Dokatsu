@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dokatsu/constants/api_constants.dart';
@@ -19,6 +20,19 @@ class CatServices {
       return [];
   }
 
+  static Future<List<String>> fetchImagesByBreed(String id) async {
+    var response = await client.get(
+        Uri.parse(
+            'https://api.thecatapi.com/v1/images/search?limit=10&breed_id=$id'),
+        headers: {HttpHeaders.authorizationHeader: cats_api_key});
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      List<String> imageUrls = List<String>.from(json.decode(jsonString).map((x) => x['url']).toList());
+      return imageUrls;
+    } else
+      return [];
+  }
+
   static Future<List<CatCategory>> fetchCategories() async {
     var response = await client.get(
         Uri.parse('https://api.thecatapi.com/v1/categories'),
@@ -26,6 +40,20 @@ class CatServices {
     if (response.statusCode == 200) {
       var jsonString = response.body;
       return categoryFromJson(jsonString);
+    } else
+      return [];
+  }
+
+  static Future<List<String>> fetchImages({int id = -1}) async {
+    final uri = id != -1
+        ? 'https://api.thecatapi.com/v1/images/search?limit=50category_ids=$id'
+        : 'https://api.thecatapi.com/v1/images/search?limit=50';
+    var response = await client.get(Uri.parse(uri),
+        headers: {HttpHeaders.authorizationHeader: cats_api_key});
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      print(json.decode(jsonString));
+      return [];
     } else
       return [];
   }

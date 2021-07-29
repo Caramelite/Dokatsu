@@ -10,7 +10,7 @@ class CatBreed {
   String origin;
   String description;
   String lifeSpan;
-  String image;
+  List<String> image;
   CatBreed({
     required this.id,
     required this.name,
@@ -22,6 +22,7 @@ class CatBreed {
   });
 
   factory CatBreed.fromJson(Map<String, dynamic> json) {
+    var img = json["image"]?['url'] ?? '';
     return CatBreed(
         id: json["id"] ?? "",
         name: json["name"] ?? "",
@@ -29,7 +30,7 @@ class CatBreed {
         origin: json["origin"] ?? "",
         description: json["description"] ?? "",
         lifeSpan: json["life_span"] ?? "",
-        image: json["image"]?["url"] ?? "",
+        image: [img],
       );
   }
 }
