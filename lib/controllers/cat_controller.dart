@@ -12,6 +12,7 @@ class CatController extends GetxController {
   void onInit() {
     fetchCategory();
     fetchBreed();
+    fetchImages();
     super.onInit();
   }
 
@@ -22,6 +23,14 @@ class CatController extends GetxController {
 
   void fetchBreed() async {
     breedList.value = await CatServices.fetchBreeds();
+    breedList.forEach((breed) async {
+      breed.image.addAll(await CatServices.fetchImagesByBreed(breed.id));
+      breed.image = breed.image.toSet().toList();
+    });
     isLoading.value = false;
+  }
+
+  void fetchImages() async {
+    await CatServices.fetchImagesByBreed('abys');
   }
 }

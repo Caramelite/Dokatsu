@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Cats/cat_breed_screen.dart';
-import 'Cats/category_screen.dart';
+import 'Cats/cat_category_screen.dart';
 import 'Dogs/dog_breed_screen.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -37,7 +37,7 @@ class NavDrawer extends StatelessWidget {
                     selected: drawerController.pet.value == PetSelected.dog,
                     onSelected: (selected) {
                       drawerController.pet.value = PetSelected.dog;
-                      drawerController.activeScaffoldBody.value = DogBreedScreen();
+                      // drawerController.activeScaffoldBody.value = DogBreedScreen();
                     },
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 30.0),
@@ -52,7 +52,7 @@ class NavDrawer extends StatelessWidget {
                     selected: drawerController.pet.value == PetSelected.cat,
                     onSelected: (selected) {
                       drawerController.pet.value = PetSelected.cat;
-                      drawerController.activeScaffoldBody.value = CatBreedScreen();
+                      // drawerController.activeScaffoldBody.value = CatBreedScreen();
                     },
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 30.0),
@@ -70,19 +70,22 @@ class NavDrawer extends StatelessWidget {
               drawerController.closeDrawer();
             },
           ),
-          ListTile(
-            leading: Icon(Icons.category_rounded),
-            title: Text('Category'),
-            onTap: () {
-              drawerController.activeScaffoldBody.value = CategoryScreen();
-              drawerController.closeDrawer();
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.how_to_vote),
-            title: Text('Votes'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.category_rounded),
+          //   title: Text('Category'),
+          //   onTap: () {
+          //     drawerController.activeScaffoldBody.value =
+          //         drawerController.pet.value == PetSelected.dog
+          //             ? DogBreedScreen()
+          //             : CatCategoryScreen();
+          //     drawerController.closeDrawer();
+          //   },
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.how_to_vote),
+          //   title: Text('Votes'),
+          //   onTap: () => {Navigator.of(context).pop()},
+          // ),
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Favorites'),
