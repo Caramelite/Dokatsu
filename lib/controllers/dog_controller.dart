@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class DogController extends GetxController {
   static DogController instance = Get.find();
-  var dogList = <Breed>[].obs;
+  var breedList = <Breed>[].obs;
   var isLoading = true.obs;
 
   @override
@@ -16,7 +16,7 @@ class DogController extends GetxController {
   void fetchBreeds() async {
     try {
       isLoading(true);
-      dogList.value = await DogServices.fetchBreeds();
+      breedList.value = await DogServices.fetchBreeds();
     } finally {
       isLoading(false);
     }

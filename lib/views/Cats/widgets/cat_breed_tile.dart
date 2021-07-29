@@ -1,12 +1,12 @@
 import 'package:dokatsu/models/Cats/Breed.dart';
 import 'package:flutter/material.dart';
 
-import '../../breed_detail.dart';
+import 'cat_breed_detail.dart';
 
-class BreedTile extends StatelessWidget {
+class CatBreedTile extends StatelessWidget {
   final Breed breed;
 
-  const BreedTile(this.breed);
+  const CatBreedTile(this.breed);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BreedTile extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BreedDetail(breed),
+            builder: (context) => CatBreedDetail(breed),
           ),
         );
       },
@@ -33,7 +33,7 @@ class BreedTile extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Image.network(
+                child: breed.image == '' ? Image.asset('assets/images/Dokatsu.png') : Image.network(
                   breed.image,
                   fit: BoxFit.cover,
                 ),

@@ -1,0 +1,1 @@
+enum PetSelected { dog, cat }

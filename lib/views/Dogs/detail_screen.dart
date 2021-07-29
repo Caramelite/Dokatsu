@@ -38,9 +38,9 @@ class DetailScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
-                    itemCount: dogController.dogList.length,
+                    itemCount: dogController.breedList.length,
                     itemBuilder: (context, index) {
-                      return DogTile(dogController.dogList[index]);
+                      return DogTile(dogController.breedList[index]);
                     },
                     staggeredTileBuilder: (index) => StaggeredTile.fit(1));
             }),
