@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dokatsu/models/Dogs/DogBreed.dart';
 import 'package:flutter/material.dart';
 
@@ -33,16 +34,25 @@ class DogBreedDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: breed.image == ''
-                    ? Image.asset('assets/images/Dokatsu Logo.png',
-                        fit: BoxFit.cover)
-                    : CachedNetworkImage(
-                        imageUrl: breed.image,
-                        placeholder: (context, url) =>
-                            Center(child: CircularProgressIndicator()),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                        fit: BoxFit.cover,
-                      ),
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  ),
+                  items: breed.image
+                      .where((url) => url.isNotEmpty)
+                      .map((url) => CachedNetworkImage(
+                            imageUrl: url,
+                            placeholder: (context, url) =>
+                                Center(child: CircularProgressIndicator()),
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.error),
+                            // fit: BoxFit.cover,
+                          ))
+                      .toList(),
+                ),
               ),
               SizedBox(height: 10),
               Text(
