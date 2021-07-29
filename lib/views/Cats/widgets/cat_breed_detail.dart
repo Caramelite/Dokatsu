@@ -1,10 +1,10 @@
 import 'package:dokatsu/models/Cats/Breed.dart';
 import 'package:flutter/material.dart';
 
-class BreedDetail extends StatelessWidget {
+class CatBreedDetail extends StatelessWidget {
   final Breed breed;
 
-  const BreedDetail(this.breed);
+  const CatBreedDetail(this.breed);
 
   @override
   Widget build(BuildContext context) {
