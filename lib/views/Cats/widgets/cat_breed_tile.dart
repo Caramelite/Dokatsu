@@ -15,43 +15,38 @@ class CatBreedTile extends StatelessWidget {
       onTap: () {
         Get.to(CatBreedDetail(breed));
       },
-      child: Card(
-        elevation: 2,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  height: 180,
-                  width: double.infinity,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: breed.image.firstWhere((url) => url.isNotEmpty,
-                              orElse: () => '') ==
-                          ''
-                      ? Image.asset('assets/images/Dokatsu Logo.png',
-                          fit: BoxFit.cover)
-                      : CachedNetworkImage(
-                          imageUrl:
-                              breed.image.firstWhere((url) => url.isNotEmpty),
-                          placeholder: (context, url) =>
-                              Center(child: CircularProgressIndicator()),
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
-                          fit: BoxFit.cover,
-                        )),
-              SizedBox(height: 8),
-              Text(
-                breed.name,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 180,
+              width: double.infinity,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
               ),
-            ],
-          ),
+              child: breed.image.firstWhere((url) => url.isNotEmpty,
+                          orElse: () => '') ==
+                      ''
+                  ? Image.asset('assets/images/Dokatsu Logo.png',
+                      fit: BoxFit.cover)
+                  : CachedNetworkImage(
+                      imageUrl: breed.image.firstWhere((url) => url.isNotEmpty),
+                      placeholder: (context, url) =>
+                          Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                      fit: BoxFit.cover,
+                    ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              breed.name,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
       ),
     );
