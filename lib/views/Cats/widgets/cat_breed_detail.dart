@@ -68,7 +68,7 @@ class CatBreedDetail extends StatelessWidget {
                           maxLines: 10,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -80,7 +80,7 @@ class CatBreedDetail extends StatelessWidget {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -92,7 +92,7 @@ class CatBreedDetail extends StatelessWidget {
                           maxLines: 15,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -104,7 +104,7 @@ class CatBreedDetail extends StatelessWidget {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
