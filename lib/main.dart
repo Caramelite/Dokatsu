@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'views/home_screen.dart';
 import 'controllers/drawer_controller.dart';
 import 'controllers/cat_controller.dart';
