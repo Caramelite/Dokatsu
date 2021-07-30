@@ -1,9 +1,12 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dokatsu/constants/controllers.dart';
-import 'package:dokatsu/constants/enums.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import '/constants/controllers.dart';
+import '/constants/enums.dart';
 
 class FactScreen extends StatelessWidget {
   @override
@@ -23,6 +26,7 @@ class FactScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ListView.builder(
+                  
                     itemCount:
                         drawerController.petSelected.value == PetSelected.dog
                             ? dogController.factList.length
@@ -35,12 +39,10 @@ class FactScreen extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
-                            // color: Colors.blue[600],
                             child: Container(
                                 width: Get.width * 0.9,
                                 height: 350,
-                                padding: const EdgeInsets.only(
-                                    left: 30, right: 30, top: 30, bottom: 30),
+                                padding: const EdgeInsets.all(30),
                                 child: Column(
                                   children: [
                                     Text('#${index + 1}',

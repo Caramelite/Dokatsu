@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'views/home_screen.dart';
-import 'controllers/drawer_controller.dart';
-import 'controllers/cat_controller.dart';
-import 'controllers/dog_controller.dart';
+
+import './views/home_screen.dart';
+import './controllers/cat_controller.dart';
+import './controllers/dog_controller.dart';
+import './controllers/drawer_controller.dart';
+
 
 void main() {
   Get.put(DrawController());
@@ -20,6 +23,7 @@ class MyApp extends StatelessWidget {
         title: 'Dokatsu',
         theme: ThemeData(
           primaryColor: Colors.blue[600],
+          accentColor: Colors.amber,
         ),
         home: SafeArea(child: HomeScreen()));
   }

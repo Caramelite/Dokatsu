@@ -1,10 +1,11 @@
-import 'package:dokatsu/constants/controllers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import 'widgets/dog_breed_tile.dart';
+import '/constants/controllers.dart';
+import './widgets/dog_breed_tile.dart';
 
 class DogBreedScreen extends StatelessWidget {
   @override
@@ -29,9 +30,8 @@ class DogBreedScreen extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
                       itemCount: dogController.breedList.length,
-                      itemBuilder: (context, index) {
-                        return DogBreedTile(dogController.breedList[index]);
-                      },
+                      itemBuilder: (context, index) =>
+                          DogBreedTile(dogController.breedList[index]),
                       staggeredTileBuilder: (index) => StaggeredTile.fit(1)),
             ),
           ),
