@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
         title: 'Dokatsu',
         theme: ThemeData(
           primaryColor: Colors.blue[600],
-          accentColor: Colors.amber,
         ),
         home: SafeArea(child: HomeScreen()));
   }
