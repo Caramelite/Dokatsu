@@ -13,9 +13,9 @@ class CatBreedScreen extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Breeds',
+            'Cat Breeds',
             style: GoogleFonts.poppins(
-              fontSize: 48,
+              fontSize: 45,
               fontWeight: FontWeight.w700,
             ),
           ),

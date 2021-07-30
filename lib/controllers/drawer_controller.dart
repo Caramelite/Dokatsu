@@ -7,7 +7,8 @@ class DrawController extends GetxController {
   static DrawController instance = Get.find();
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
-  var pet = PetSelected.dog.obs;
+  var petSelected = PetSelected.dog.obs;
+  var tileSelected =TileSelected.breed.obs;
   var activeScaffoldBody = Rx<Widget>(DogBreedScreen());
 
   void openDrawer() {
