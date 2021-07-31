@@ -31,7 +31,7 @@ class DogBreedDetail extends StatelessWidget {
                     width: double.infinity,
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                      color: Colors.blue[400],
+                      color: Colors.blue[500],
                     ),
                     child: CarouselSlider(
                       options: CarouselOptions(
@@ -43,15 +43,34 @@ class DogBreedDetail extends StatelessWidget {
                       items: breed.image
                           .where((url) => url.isNotEmpty)
                           .map(
-                            (url) => ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: CachedNetworkImage(
-                                imageUrl: url,
-                                placeholder: (context, url) =>
-                                    Center(child: CircularProgressIndicator()),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                            (url) => CachedNetworkImage(
+                              imageUrl: url,
+                              imageBuilder: (_, imgProvider) => Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black54,
+                                      blurRadius: 25.0, // soften the shadow
+                                      spreadRadius: 2.0, //extend the shadow
+                                      offset: Offset(
+                                        0, // Move to right 10  horizontally
+                                        15.0, // Move to bottom 10 Vertically
+                                      ),
+                                    )
+                                  ],
+                                  image: DecorationImage(
+                                    image: imgProvider,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
+                              placeholder: (context, url) =>
+                                  Center(child: CircularProgressIndicator()),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
                             ),
                           )
                           .toList(),
@@ -130,15 +149,31 @@ class DogBreedDetail extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue[500],
                 borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black45,
+                    blurRadius: 30.0, // soften the shadow
+                    spreadRadius: 1.0, //extend the shadow
+                    offset: Offset(
+                      0, // Move to right 10  horizontally
+                      10.0, // Move to bottom 10 Vertically
+                    ),
+                  )
+                ],
               ),
               child: Center(
-                child: Text(
-                  breed.name,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.poppins(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: FittedBox(
+                    child: Text(
+                      breed.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.poppins(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ),
               ),

@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Dokatsu',
         theme: ThemeData(
-          primaryColor: Colors.blue[600],
-          accentColor: Colors.amber,
+          primaryColor: Colors.blue[700],
         ),
         home: SafeArea(child: HomeScreen()));
   }
